@@ -26,12 +26,14 @@ export default class ShareableForm extends PureComponent {
     if(expiration) {
       expiration = localizeDate(expiration);
     }
-    onComplete({ ...this.state, type: shareableType });
-    this.setState({
-      description: '',
-      expiration: '',
-      urgent: false
-    });
+    onComplete({ ...this.state, type: shareableType })
+      .then(() => {
+        this.setState({
+          description: '',
+          expiration: '',
+          urgent: false
+        });
+      });
   };
 
   render() {

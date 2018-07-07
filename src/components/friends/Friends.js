@@ -41,21 +41,27 @@ class Friends extends PureComponent {
   handleSubmit = event => {
     event.preventDefault();
     this.props.sendFriendRequest({ email: `${this.state.addFriendForm}` })
-      .then(() => alert('Friend request sent! If your friend does not receive the request, please check the spelling of their email.'));
-    this.setState({ addFriendForm: '' });
+      .then(() => {
+        this.setState({ addFriendForm: '' });
+        alert('Friend request sent! If your friend does not receive the request, please check the spelling of their email.');
+      });
   };
 
   handleAcceptFriend = ({ target }) => {
     const { acceptFriendRequest, loadFriends } = this.props;
-    acceptFriendRequest(target.id);
-    loadFriends();
+    acceptFriendRequest(target.id)
+      .then(() => {
+        loadFriends();
+      });
   };
 
   handleRemoveFriend = ({ target }) => {
     const { removeFriend, loadFriends } = this.props;
     if(confirm('This will remove your friend, and remove you from their friends list. Are you sure you want to do this?')) {
-      removeFriend(target.id);
-      loadFriends();
+      removeFriend(target.id)
+        .then(() => {
+          loadFriends();
+        });
     }
   };
 
