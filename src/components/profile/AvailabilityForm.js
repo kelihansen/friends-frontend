@@ -11,36 +11,21 @@ class AvailabilityForm extends PureComponent {
   };
 
   state = {
-    days: { 
-      sunday: false,
-      monday: false,
-      tuesday: false,
-      wednesday: false,
-      thursday: false,
-      friday: false,
-      saturday: false,
-    },
+    days: [],
     notes: ''
   };
 
-  handleChange = ({ target }) => {
-    const { type, name, checked, value } = target;
-    type === 'checkbox' ?
-      this.setState(prevState => ({ days: { ...prevState.days, [name]: checked } }))
-      : this.setState({ [name]: value });
+  handleChange = ({ target: { value } }) => {
+    this.setState({ notes: value });
+  };
+
+  handleDayUpdate = checkedDays => {
+    this.setState({ days: checkedDays });
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    const { days, notes } = this.state;
-    const dayArray = Object.keys(days);
-    const checkedDays = dayArray.filter(day => days[day]);
-    this.props.updateProfile({
-      availability: {
-        days: checkedDays,
-        notes
-      }
-    })
+    this.props.updateProfile({ availability: this.state })
       .then(() => this.props.onDone('editingAvailability'));
   };
 
@@ -49,7 +34,7 @@ class AvailabilityForm extends PureComponent {
 
     return (
       <form className="availability-form" onSubmit={this.handleSubmit}>
-        <DayPicker handleCheckboxChange={this.handleChange} days={days}/>
+        <DayPicker onUpdate={this.handleDayUpdate} days={days}/>
         <label htmlFor="notes">Notes:</label>
         <input onChange={this.handleChange} id="notes" name="notes" type="text" value={notes}/>
         <button className="save-button" type="submit">SAVE</button>
