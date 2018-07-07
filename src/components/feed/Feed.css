@@ -1,6 +1,8 @@
 :local(.feed) {
   padding: 2rem 1rem;
+  text-align: center;
   li {
+    text-align: left;
     border: 1rem solid var(--mid-gray);
     margin-bottom: 2rem;
     .owner {
