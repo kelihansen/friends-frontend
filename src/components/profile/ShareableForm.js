@@ -10,43 +10,39 @@ export default class ShareableForm extends PureComponent {
   };
 
   state = {
-    name: '',
+    description: '',
     expiration: '',
-    priority: false
+    urgent: false
   };
 
-  handleChange = ({ target }) => {
-    this.setState({ [target.name]: target.value });
+  handleChange = ({ target: { name, value } }) => {
+    this.setState({ [name]: value });
   };
 
   handleSubmit = event => {
     event.preventDefault();
     const { shareableType, onComplete } = this.props;
-    let { name, expiration, priority } = this.state;
-    if(priority) {
-      priority = 2;
-    }
+    let { expiration } = this.state;
     if(expiration) {
       expiration = localizeDate(expiration);
     }
-    const submission = { name, expiration, priority, type: shareableType };
-    onComplete(submission);
+    onComplete({ ...this.state, type: shareableType });
     this.setState({
-      name: '',
+      description: '',
       expiration: '',
-      priority: false
+      urgent: false
     });
   };
 
   render() {
     const { action, shareableType } = this.props;
-    const { name, expiration, priority } = this.state;
+    const { description, expiration, urgent } = this.state;
 
     return (
       <form className="shareable-form" onSubmit={this.handleSubmit}>
         <div className="description">
-          <label htmlFor={`${shareableType}-name`}>Description:</label>
-          <input id={`${shareableType}-name`} type="text" name="name" value={name} required onChange={this.handleChange}/>
+          <label htmlFor={`${shareableType}-description`}>Description:</label>
+          <input id={`${shareableType}-description`} type="text" name="description" value={description} required onChange={this.handleChange}/>
         </div>
 
         <div className="expiration">
@@ -54,9 +50,9 @@ export default class ShareableForm extends PureComponent {
           <input id={`${shareableType}-expiration`} type="date" name="expiration" value={expiration} onChange={this.handleChange}/>
         </div>
     
-        <div className="priority">
-          <label htmlFor={`${shareableType}-priority`}>Urgent?</label>
-          <input id={`${shareableType}-priority`} type="checkbox" name="priority" checked={priority} onChange={this.handleChange}/>
+        <div className="urgent-checkbox">
+          <label htmlFor={`${shareableType}-urgent`}>Urgent?</label>
+          <input id={`${shareableType}-urgent`} type="checkbox" name="urgent" checked={urgent} onChange={this.handleChange}/>
         </div>
 
         <button className="save-button" type="submit">{action}</button>
