@@ -9,7 +9,8 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path,
-    filename: 'bundle.[hash].js'
+    filename: 'bundle.[hash].js',
+    publicPath: '/'
   },
   devServer: {
     proxy: {
