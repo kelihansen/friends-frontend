@@ -43,7 +43,7 @@ class Shareable extends PureComponent {
           {shareable.map(item => (
             <li key={item._id}>
               {!!item.urgent && <span className="accessible-urgent">urgent</span>}
-              <span className={item.urgent ? 'urgent shareable-info' : 'shareable-info'}>
+              <span className={`shareable-info ${item.urgent ? 'urgent' : ''}`}>
                 {item.description}
                 {item.expiration && ` (by ${formatDate(item.expiration)})`}
                 {isUser && <button className="remove" onClick={() => this.handleClick(item._id, shareableType)}>&times;</button>}
