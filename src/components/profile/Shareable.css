@@ -40,26 +40,25 @@
   .shareable-form {
     margin-bottom: 1.5rem;
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-gap: 1rem;
-    grid-template-areas: "description description" "expiration urgent"
+    grid-template-areas: "description" "expiration" "urgent"
   }
   .description {
     grid-area: description;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     input {
       width: 100%;
-      margin-right: 0;
+      margin: 0;
     }
   }
   .expiration {
     grid-area: expiration;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     input {
-      width: initial;
+      margin: 0;
     }
   }
   .urgent-checkbox {
@@ -75,5 +74,30 @@
     grid-area: urgent;
     justify-self: flex-end;
     width: fit-content;
+  }
+  @media (min-width: 560px) {
+    .shareable-form {
+      margin-bottom: 1.5rem;
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 3fr 2fr;
+      grid-gap: 1rem;
+      grid-template-areas: "description description" "expiration urgent"
+    }
+    .description {
+      flex-direction: row;
+      align-items: center;
+      input {
+        width: 100%;
+        margin-right: 0;
+      }
+    }
+    .expiration {
+      flex-direction: row;
+      align-items: center;
+      input {
+        width: initial;
+      }
+    }
   }
 }
