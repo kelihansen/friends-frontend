@@ -6,24 +6,25 @@ export default class About extends PureComponent {
     return (
       <div className={styles.about}>
         <p>We built Together out of a desire for true personal connection.</p>
-        <p>Its purpose is to help friends interact in ways that allow us to increase feelings of community and belonging.</p>
-        <p>
-          In our world today, people are linked more than at any other point in history. We have friends from all around the globe, yet depression and loneliness are on the rise. More individuals feel isolated and disconnected than ever before.
+        <p>Get started by signing up. (Hint: It isn&apos;t necessary to use a real email. It just needs to be unique in our system.)
         </p>
         <p>
-          A Harvard health study, spanning more than 75 years, reveals that close relationships are what keep us happy throughout our lives. These ties protect us from life’s discontents, help delay mental and physical decline, and are better predictors of long and happy lives than social class, IQ, or even genes.
+          Your profile will only be shared with friends you confirm. Fill it in, starting with a photo URL. A 150 &times; 150px image will look best. Let your friends know how you prefer to be contacted and when you have free time.
         </p>
         <p>
-          Decades of research also show that giving to others increases our own joy. Measuring hormones and activity in our bodies and brains when being helpful or cooperative lights up our pleasure centers. We are, quite literally, hard-wired to be generous with others.
+          Now comes the fun part. Think about what you have to offer as a friend. Maybe you like to bake cookies but need help eating them. Maybe you&apos;d like to share your woodworking skills. Enter anything you&apos;d like to give in the &ldquo;Giving&rdquo; section of your profile. If there&apos;s a time limit on your offer, add a date. If you&apos;d like your offer to be highlighted as urgent, check the box.
         </p>
         <p>
-          There are wonderful resources available to help enhance personal happiness.  There are also incredible social platforms that help us communicate with one another.  We feel Together brings an opportunity for these to overlap. Spending time with someone who matters to you, knowing you are there for them when they need support, and that they are there for you is the crucial ingredient in the recipe for happiness. Together is not only about what we need for our own happiness, but what we each have to give to each other.
+          Next, think about what you&apos;d like from your friends. Are you looking for a hiking companion? Do you wish someone would handwrite you a letter? Add these to the &ldquo;Requesting&rdquo; section of your profile.
         </p>
         <p>
-          Join Together and see what you have to gain by sharing what you have to give.
+          Connect with your friends, and see what they&apos;re giving and requesting by visiting their profiles. You can also find everything your friends have marked as urgent in your feed – click a friend&apos;s name to access their profile from there.
+        </p>
+        <p>
+          By reflecting on what we have to offer and where we could use help, we open ourselves up to stronger bonds. Join Together and discover what you have to gain by sharing what you have to give.
         </p>
         <p> 
-          You can find the people behind Together at <a href="https://github.com/eighthnote" target="_blank" rel="noopener noreferrer">https://github.com/eighthnote</a>.
+          Together was created as a final project for <a href="https://www.alchemycodelab.com" target="_blank" rel="noopener noreferrer">Alchemy Code Lab</a>&apos;s career-track program in full-stack JavaScript. Find the code at <a href="https://github.com/kelihansen/friends-frontend" target="_blank" rel="noopener noreferrer">https://github.com/kelihansen/friends-frontend</a>.
         </p>
       </div>
     );
