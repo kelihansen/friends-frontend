@@ -6,13 +6,13 @@ export default class About extends PureComponent {
     return (
       <div className={styles.about}>
         <p>We built Together out of a desire for true personal connection.</p>
-        <p>Get started by signing up. (Hint: It isn&apos;t necessary to use a real email. It just needs to be unique in our system.)
+        <p>Get started by signing up. (Hint: You can make up an email address if you like. It just needs to be unique in our system.)
         </p>
         <p>
           Your profile will only be shared with friends you confirm. Fill it in, starting with a photo URL. A 150 &times; 150px image will look best. Let your friends know how you prefer to be contacted and when you have free time.
         </p>
         <p>
-          Now comes the fun part. Think about what you have to offer as a friend. Maybe you like to bake cookies but need help eating them. Maybe you&apos;d like to share your woodworking skills. Enter anything you&apos;d like to give in the &ldquo;Giving&rdquo; section of your profile. If there&apos;s a time limit on your offer, add a date. If you&apos;d like your offer to be highlighted as urgent, check the box.
+          Now comes the good part. Think about what you have to offer as a friend. Maybe you like to bake cookies but need help eating them. Maybe you&apos;d like to share your woodworking skills. Enter anything you&apos;d like to give in the &ldquo;Giving&rdquo; section of your profile. If there&apos;s a time limit on your offer, add a date. If you&apos;d like your offer to be highlighted as urgent, check the box.
         </p>
         <p>
           Next, think about what you&apos;d like from your friends. Are you looking for a hiking companion? Do you wish someone would handwrite you a letter? Add these to the &ldquo;Requesting&rdquo; section of your profile.
