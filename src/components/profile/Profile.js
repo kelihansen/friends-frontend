@@ -14,7 +14,6 @@ class Profile extends PureComponent {
   static propTypes = {
     match: PropTypes.object,
     location: PropTypes.object.isRequired,
-    isUser: PropTypes.bool,
     loadProfile: PropTypes.func.isRequired,
     clearProfile: PropTypes.func.isRequired,
     profile: PropTypes.object,
@@ -25,12 +24,15 @@ class Profile extends PureComponent {
   state = {
     editingPicture: false,
     editingContact: false,
-    editingAvailability: false
+    editingAvailability: false,
+    isUser: false
   };
 
   handleProfileLoad = () => {
-    const { match, isUser, loadProfile } = this.props;
-    isUser ? loadProfile() : loadProfile(match.params.id);
+    const { match, loadProfile } = this.props;
+    match.url === '/profile' ?
+      (loadProfile(), this.setState({ isUser: true })) :
+      (loadProfile(match.params.id), this.setState({ isUser: false }));
   };
  
   componentDidMount() {
@@ -54,11 +56,10 @@ class Profile extends PureComponent {
   }
 
   render() {
-    const { profile, giving, requesting, isUser } = this.props;
-    const { editingPicture, editingContact, editingAvailability } = this.state;
+    const { profile, giving, requesting } = this.props;
+    const { editingPicture, editingContact, editingAvailability, isUser } = this.state;
 
     if(!profile) return null;
-
     const { firstName, lastName, pictureUrl, availability, contact } = profile;
 
     return (
@@ -86,7 +87,7 @@ class Profile extends PureComponent {
           {isUser && editingAvailability && <AvailabilityForm onDone={this.handleFormToggle}/>}
           <div className="availability-info">
             <ul>
-              {availability && availability.days && availability.days.map((item, i) => <li key={i}>{capitalize(item)}</li>)}
+              {availability && availability.days && availability.days.map(day => <li key={day}>{capitalize(day)}</li>)}
             </ul>
             {availability && availability.notes && <p><span className="notes-heading">Notes: </span>{availability.notes}</p>}
           </div>
