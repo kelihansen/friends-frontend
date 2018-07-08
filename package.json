@@ -1,12 +1,12 @@
 {
-  "name": "frontend",
+  "name": "Together: Front End",
   "version": "1.0.0",
-  "description": "An app to help build and maintain fulfilling friendships.",
+  "description": "An App for Strengthening Friendships",
   "main": "enzyme.setup.js",
   "scripts": {
     "build:prod": "npm run build && npm run copy",
     "build": "webpack --mode production",
-    "copy": "rm -rf ../backend/public && cp -R ./docs ../backend/public",
+    "copy": "rm -rf ../friends-backend/public && cp -R ./docs ../friends-backend/public",
     "start": "webpack-dev-server --hot --open --mode development",
     "lint": "eslint .",
     "pretest": "npm run lint",
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eighthnote/frontend.git"
+    "url": "git+https://github.com/kelihansen/friends-frontend.git"
   },
-  "author": "Victor Bofill <victorm.bofill@gmail.com>, Keli Hansen <keli.p.hansen@gmail.com>, Katlyn Tucker <studioquirk@yahoo.com>",
+  "author": "Keli Hansen",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/eighthnote/frontend/issues"
+    "url": "https://github.com/kelihansen/friends-frontend/issues"
   },
-  "homepage": "https://github.com/eighthnote/frontend#readme",
+  "homepage": "https://github.com/kelihansen/friends-frontend#readme",
   "devDependencies": {
     "autoprefixer": "^8.6.0",
     "babel-core": "^6.26.3",
