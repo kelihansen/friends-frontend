@@ -1,33 +1,32 @@
-![Img Shareable logo](https://contattafiles.s3.us-west-1.amazonaws.com/tnt9084/dYzTjb43YpnK9ls/Screen%20Shot%202018-06-28%20at%202.47.20%20PM.png)
+# Together: An App for Strengthening Friendships
 
-# Overview
+Find the deployed app: https://together-alchemy.herokuapp.com\
+Find the back-end code: https://github.com/kelihansen/friends-backend
 
-**Shareable** is a react redux app to help friends maintain relationships and build community.
+This code represents Keli Hansen's continued work on the [Alchemy Code Lab](https://www.alchemycodelab.com) final project found at https://github.com/eighthnote.
 
-## Description
+## Requirements
 
-Designed to promote personal interactions between friends in ways that fulfill our own needs while allowing us to contribute to our friends' happiness quotas simultaneously.
-https://alchemyshareables.herokuapp.com
+See back-end repository. If you would simply like to try the deployed app, information is available on the About page: https://together-alchemy.herokuapp.com/about.
 
-## Installation Instructions
+## Installation
 
-If you would like to suggest code for **Shareable**, feel free. This project includes all the files you will need, including a package.json. Be certain to fork and clone both the frontend and the backend.  In your terminal, enter npm i (for both) to install the dev dependencies you will need locally. You're ready to go!
+After cloning this repository,
 
-1. Fork our repo (https://github.com/eighthnote).
-2. Create your feature branch (git checkout -b branchname).
-3. Commit your changes (git commit -m "add some changes").
-4. Push to the branch (git push origin branchname).
-5. Create a new Pull Request.
+1. Install dependencies:
 
-(In the future, we hope to add a Plans route, which will include the ability to make a plan with your friend from their profile page, take you to a calendar to schedule the event, then notify your friend of the pending arrangement. Much of that will depend on what life throws at us after this class is complete!)
+    ```
+    npm i
+    ```
 
-## HELP!
+## Usage
 
-If you run into any issues, please refer to the reference docs for the dependencies, which are readily available online or through MDN or npm.  If still having trouble. start an issue on GitHub or Stack Overflow.
+Tests can be run with the following terminal commands:
+1. `npm test`,
+1. `npm run test:watch`
 
-## Authors
+Launch the app locally with `npm start`, making sure that your server and database are running.
 
-* **Keli Hansen** - https://github.com/kelihansen
-* **Katlyn Tucker** - https://github.com/katlyn75 
-* **Victor Bofill** - https://github.com/victorbofill
+## Credits
 
+Keli Hansen, Victor Bofill, Katlyn Tucker, Marty Nelson

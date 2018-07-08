@@ -19,8 +19,8 @@ class PictureForm extends PureComponent {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.updateProfile(this.state);
-    this.props.onDone('editingPicture');
+    this.props.updateProfile(this.state)
+      .then(() => this.props.onDone('editingPicture'));
   };
 
   render() {
@@ -29,8 +29,10 @@ class PictureForm extends PureComponent {
     return (
       <form onSubmit={this.handleSubmit}>
         <label htmlFor="picture">Enter an Image URL:</label>
-        <input id="picture" type="text" required value={pictureUrl} onChange={this.handleChange}/>
-        <button className="save-button" type="submit">SAVE</button>
+        <div className="input-and-button">
+          <input id="picture" type="text" required value={pictureUrl} onChange={this.handleChange}/>
+          <button className="text-button" type="submit">SAVE</button>
+        </div>
       </form>
     );
   }

@@ -23,14 +23,11 @@ class Feed extends PureComponent {
 
     return (
       <div className={styles.feed}>
-        <ul>
-          {feed && !!feed.length ? feed.map((shareable, i) => (
-            <FeedShareable
-              key={i}
-              {...shareable}
-            />
-          )) : <li style={{ border: 'none' }}>No friends are giving or requesting anything urgent!</li>}
-        </ul>
+        {feed.length > 0 ?
+          <ul>
+            {feed.map(shareable => <FeedShareable key={shareable._id} {...shareable}/>)}
+          </ul> :
+          <span>No friends are giving or requesting anything urgent!</span>}
       </div>
     );
   }

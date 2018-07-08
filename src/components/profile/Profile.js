@@ -14,7 +14,6 @@ class Profile extends PureComponent {
   static propTypes = {
     match: PropTypes.object,
     location: PropTypes.object.isRequired,
-    isUser: PropTypes.bool,
     loadProfile: PropTypes.func.isRequired,
     clearProfile: PropTypes.func.isRequired,
     profile: PropTypes.object,
@@ -28,9 +27,12 @@ class Profile extends PureComponent {
     editingAvailability: false
   };
 
+  isUser = false;
+
   handleProfileLoad = () => {
-    const { match, isUser, loadProfile } = this.props;
-    isUser ? loadProfile() : loadProfile(match.params.id);
+    const { match, loadProfile } = this.props;
+    this.isUser = match.url === '/profile';
+    this.isUser ? loadProfile() : loadProfile(match.params.id);
   };
  
   componentDidMount() {
@@ -54,11 +56,11 @@ class Profile extends PureComponent {
   }
 
   render() {
-    const { profile, giving, requesting, isUser } = this.props;
+    const { profile, giving, requesting } = this.props;
     const { editingPicture, editingContact, editingAvailability } = this.state;
+    const { isUser } = this;
 
     if(!profile) return null;
-
     const { firstName, lastName, pictureUrl, availability, contact } = profile;
 
     return (
@@ -66,27 +68,27 @@ class Profile extends PureComponent {
         <div className="wrapper">
           <div className="name-and-picture">
             <div className="profile-picture" style={pictureUrl && { background: `url(${pictureUrl}) 50% 50% no-repeat` }}>
-              {isUser && <button className={editingPicture ? 'editing picture-button' : 'picture-button'} onClick={() => this.handleFormToggle('editingPicture')}>✎</button>}
+              {isUser && <button className={`icon-button picture-button ${editingPicture ? 'editing' : ''}`} onClick={() => this.handleFormToggle('editingPicture')}>✎</button>}
             </div>
             <h2 className="name">{firstName} {lastName}</h2>
           </div>
           {isUser && editingPicture && <PictureForm onDone={this.handleFormToggle}/>}
 
           <div className="button-and-heading">
-            {isUser && <button className={editingContact ? 'editing' : undefined} onClick={() => this.handleFormToggle('editingContact')}>✎</button>}
+            {isUser && <button className={`icon-button ${editingContact ? 'editing' : ''}`} onClick={() => this.handleFormToggle('editingContact')}>✎</button>}
             <h4>Reachable at:</h4>
           </div>
           {isUser && editingContact && <ContactForm onDone={this.handleFormToggle}/>}
           <p className="contact-info">{contact}</p>
         
           <div className="button-and-heading">
-            {isUser && <button className={editingAvailability ? 'editing' : undefined} onClick={() => this.handleFormToggle('editingAvailability')}>✎</button>}
+            {isUser && <button className={`icon-button ${editingAvailability ? 'editing' : ''}`} onClick={() => this.handleFormToggle('editingAvailability')}>✎</button>}
             <h4>Most Likely to Be Available:</h4>
           </div>
           {isUser && editingAvailability && <AvailabilityForm onDone={this.handleFormToggle}/>}
           <div className="availability-info">
             <ul>
-              {availability && availability.days && availability.days.map((item, i) => <li key={i}>{capitalize(item)}</li>)}
+              {availability && availability.days && availability.days.map(day => <li key={day}>{capitalize(day)}</li>)}
             </ul>
             {availability && availability.notes && <p><span className="notes-heading">Notes: </span>{availability.notes}</p>}
           </div>
