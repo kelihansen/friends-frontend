@@ -42,7 +42,6 @@ class Shareable extends PureComponent {
         <ul>
           {shareable.map(item => (
             <li key={item._id}>
-              {!!item.urgent && <span className="accessible-urgent">urgent</span>}
               <span className={`shareable-info ${item.urgent ? 'urgent' : ''}`}>
                 {item.description}
                 {item.expiration && ` (by ${formatDate(item.expiration)})`}
