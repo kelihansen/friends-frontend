@@ -1,5 +1,5 @@
 :local(.about) {
-  width: 75%;
+  width: 80%;
   margin: 2.5rem auto;
   p {
     margin-top: 1.5rem;
@@ -13,7 +13,7 @@
       color: var(--magenta);
     }
   }
-  @media (min-width: 730px) {
+  @media (min-width: 700px) {
     width: 550px;
   }
 }

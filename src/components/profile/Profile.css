@@ -3,16 +3,29 @@
   background: linear-gradient(330deg,var(--saffron), var(--magenta));
   position: relative;
   padding: 1rem;
+  font-size: 0.9em;
   .wrapper {
-    padding: 4rem 7% 2rem 7%;
+    padding: 3rem 7% 2rem 7%;
     background-color: white;
   }
   h4 {
-    font-size: 1em;
+    font-weight: 500;
+    font-size: 1.1em;
     margin-bottom: 1rem;
   }
-  .contact-info {
-    margin: 0 0 1rem 3rem;
+  .icon-button {
+    background-color: var(--soft-black);
+    border: none;
+    width: 2rem;
+    height: 2rem;
+    color: white;
+    font-size: 1.5em;
+    &:hover {
+      background-color: var(--dark-saffron);
+    }
+  }
+  .editing {
+    background-color: var(--dark-saffron);
   }
   .name-and-picture {
     position: absolute;
@@ -20,22 +33,10 @@
     display: flex;
     align-items: center;
     .picture-button {
-      background-color: var(--soft-black);
       position: absolute;
       right: 0;
       bottom: 0;
-      border: none;
-      width: 2rem;
-      height: 2rem;
-      color: white;
-      font-size: 1.5em;
       align-self: flex-end;
-      &:hover {
-        background-color: var(--dark-saffron);
-      }
-    }
-    .editing {
-      background-color: var(--dark-saffron);
     }
   }
   .profile-picture {
@@ -47,52 +48,41 @@
   }
   .name {
     margin: 1.3rem 0 0 0.6rem;
-    font-size: 1em;
+    font-size: 1.2em;
   }
-  .save-button {
-    background-color: var(--mid-gray);
-    font-size: 0.8em;
-    color: white;
+  .text-button {
     height: 1.5rem;
     padding: 0 0.3rem;
-    &:hover {
-      background-color: var(--soft-black);
-    }
   }
   .button-and-heading {
     display: flex;
     align-items: center;
     button {
-      background-color: var(--soft-black);
-      border: none;
-      width: 2rem;
-      height: 2rem;
-      color: white;
-      font-size: 1.5em;
       margin: 0 0.5rem 1rem 0;
-      &:hover {
-        background-color: var(--dark-saffron);
-      }
     }
     .add-button {
       font-size: 1.8rem;
       line-height: 1.8rem;
       font-weight: 500;
     }
-    .editing {
-      background-color: var(--dark-saffron);
-    }
   }
   form {
     margin-bottom: 1rem;
   }
+  label {
+    display: inline-block;
+    margin: 0.2rem 0.5rem 0.2rem 0;
+  }
   input {
-    width: 12rem;
     height: 1.5rem;
-    padding: 0 0.2rem;
-    border: 1px solid var(--mid-gray);
-    font-size: 1em;
-    margin: 0 0.5rem;
+    margin: 0 0.5rem 0 0;
+  }
+  .input-and-button {
+    display: flex;
+    align-items: center;
+  }
+  .contact-info {
+    margin: 0 0 1rem 2.6rem;
   }
   .availability-form {
     display: block;
@@ -101,38 +91,69 @@
       display: block;
       margin: 0 0.5rem 0 0;
     }
-    input[type="text"] {
-      width: 60%;
-    }
     .checkbox {
       display: flex;
       align-items: center;
       margin-bottom: 0.5rem;
     }
-    button {
-      margin: 0.5rem 0;
+    .main-form {
+      padding: 0.5rem 0;
+      input {
+        width: 100%;
+      }
+      display: flex;
+      align-items: center;
     }
   }
   .availability-info {
-    margin: 0 0 1rem 3rem;
+    margin: 0 0 1rem 2.6rem;
+    li {
+      line-height: 1.4em;
+    }
     p {
       margin-top: 1rem;
     }
   }
   .notes-heading {
     font-weight: 500;
-    font-size: 1.2em;
+    font-size: 1em;
   }
-  @media (min-width: 730px) {
-    width: 75%;
+  @media (min-width: 470px) {
+    font-size: 0.9em;
+    .name {
+      font-size: 1.5em;
+    }
+    h4 {
+      font-size: 1.2em;
+    }
+    .notes-heading {
+      font-size: 1.1em;
+    }
+    .availability-form {
+      .main-form {
+        input {
+          width: 60%;
+        }
+      }
+    }
+  }
+  @media (min-width: 600px) {
+    font-size: 1em;
     .name {
       font-size: 2em;
     }
     h4 {
       font-size: 1.5em;
     }
+    .notes-heading {
+      font-size: 1.2em;
+    }
+  }
+  @media (min-width: 780px) {
+    width: 75%;
     form {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       margin-bottom: 1rem;
     }

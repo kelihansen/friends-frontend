@@ -35,9 +35,11 @@ class AvailabilityForm extends PureComponent {
     return (
       <form className="availability-form" onSubmit={this.handleSubmit}>
         <DayPicker onUpdate={this.handleDayUpdate} days={days}/>
-        <label htmlFor="notes">Notes:</label>
-        <input onChange={this.handleChange} id="notes" name="notes" type="text" value={notes}/>
-        <button className="save-button" type="submit">SAVE</button>
+        <div className="main-form">
+          <label htmlFor="notes">Notes:</label>
+          <input onChange={this.handleChange} id="notes" name="notes" type="text" value={notes}/>
+          <button className="text-button" type="submit">SAVE</button>
+        </div>
       </form>
     );
   }

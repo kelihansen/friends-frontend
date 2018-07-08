@@ -53,7 +53,7 @@ class Credentials extends PureComponent {
           <label htmlFor="password">Password:</label>
           <input type="password" id="password" value={password} required onChange={this.handleChange}/>
 
-          <button type="submit">{action}</button>
+          <button type="submit" className="text-button">{action}</button>
         </div>
       </form>
     );

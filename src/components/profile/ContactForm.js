@@ -29,8 +29,10 @@ class ContactForm extends PureComponent {
     return (
       <form onSubmit={this.handleSubmit}>
         <label htmlFor="contact">How should friends contact you?</label>
-        <input id="contact" type="text" value={contact} required onChange={this.handleChange}/>
-        <button className="save-button" type="submit">SAVE</button>
+        <div className="input-and-button">
+          <input id="contact" type="text" value={contact} required onChange={this.handleChange}/>
+          <button className="text-button" type="submit">SAVE</button>
+        </div>
       </form>
     );
   }

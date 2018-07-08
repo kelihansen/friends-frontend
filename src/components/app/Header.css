@@ -1,13 +1,12 @@
 :local(.header) {
   .logo {
-    text-align: center;
     font-family: Lobster, sans-serif;
     font-size: 4em;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    display: block;
+    padding: 0.5rem 0;
     width: 14rem;
     margin: 0 auto;
+    text-align: center;
+    display: block;
     background: linear-gradient(150deg,var(--saffron), var(--magenta));
     background-clip: text;
     -webkit-background-clip: text;
@@ -49,10 +48,9 @@
       }
       &.current::after {
         position: absolute;
-        bottom: 0;
         left: 0;
         right: 0;
-        border-bottom: 0.2rem solid var(--dark-saffron);
+        border-bottom-color: var(--dark-saffron);
       }
       }
       .logout {

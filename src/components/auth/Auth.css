@@ -1,6 +1,12 @@
 :local(.auth) {
-  width: 75%;
+  width: 80%;
   margin: 2rem auto 0 auto;
+  .auth-form {
+    padding: 1rem;
+    form {
+      background-color: white;
+    }
+  }
   .auth-nav {
     display: flex;
     justify-content: space-between;
@@ -10,11 +16,17 @@
     }
     a {
       text-align: center;
-      font-size: 1.2em;
+      font-size: 1em;
       padding: 0.5rem 2rem;
       font-weight: 500;
       color: white;
       display: block;
+      &.signin {
+        padding-top: 1rem;
+      } 
+      &.signup {
+        padding-top: 1rem;
+      } 
     }
   }
   .auth-link {
@@ -29,26 +41,10 @@
       background-color: var(--dark-saffron);
     }
   }
-  a {
-    &.signin {
-      padding-top: 1rem;
-    } 
-    &.signup {
-      padding-top: 1rem;
-    } 
-  }
   .signup {
     background-color: var(--magenta);
     &:hover {
       background-color: var(--magenta);
-    }
-  }
-  .auth-form {
-    width: 100%;
-    padding: 1rem;
-    form {
-      width: 100%;
-      background-color: white;
     }
   }
   .auth-error {
@@ -58,5 +54,10 @@
   }
   @media (min-width: 470px) {
     width: 350px;
+    .auth-nav {
+      a {
+        font-size: 1.2em;
+      }
+    }
   }
 }

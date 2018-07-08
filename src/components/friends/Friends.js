@@ -80,7 +80,7 @@ class Friends extends PureComponent {
             <label htmlFor="add-friend">Enter your friend&apos;s email:</label>
             <input onChange={this.handleChange} id="add-friend" name="addFriendForm" type="text" required value={addFriendForm}/>
           </div>
-          <button type="submit">SEND REQUEST</button>
+          <button type="submit" className="text-button">SEND REQUEST</button>
         </form>
         <div className="friend-error">{!!error && <span>{error.error}</span>}</div>
 
@@ -89,7 +89,7 @@ class Friends extends PureComponent {
           <ul>
             {pendingFriends && pendingFriends.map(friend => (
               <li key={friend._id}>
-                {friend.firstName} {friend.lastName}<button id={friend._id} onClick={this.handleAcceptFriend}>ACCEPT</button>
+                {friend.firstName} {friend.lastName}<button id={friend._id} onClick={this.handleAcceptFriend} className="text-button">ACCEPT</button>
               </li>
             ))}
           </ul>
@@ -100,7 +100,7 @@ class Friends extends PureComponent {
           <ul>
             {friends && !!friends.length ? friends.map((friend, i) => (
               <span className="existing-friends" key={i}>
-                <button id={friend._id} className="remove-friend" onClick={this.handleRemoveFriend}>&times;</button>
+                <button id={friend._id} className="x-button remove-friend" onClick={this.handleRemoveFriend}>&times;</button>
                 <Link to={`/friends/${friend._id}`}>
                   <Friend
                     firstName={friend.firstName}

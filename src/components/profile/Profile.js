@@ -68,21 +68,21 @@ class Profile extends PureComponent {
         <div className="wrapper">
           <div className="name-and-picture">
             <div className="profile-picture" style={pictureUrl && { background: `url(${pictureUrl}) 50% 50% no-repeat` }}>
-              {isUser && <button className={editingPicture ? 'editing picture-button' : 'picture-button'} onClick={() => this.handleFormToggle('editingPicture')}>✎</button>}
+              {isUser && <button className={`icon-button picture-button ${editingPicture ? 'editing' : ''}`} onClick={() => this.handleFormToggle('editingPicture')}>✎</button>}
             </div>
             <h2 className="name">{firstName} {lastName}</h2>
           </div>
           {isUser && editingPicture && <PictureForm onDone={this.handleFormToggle}/>}
 
           <div className="button-and-heading">
-            {isUser && <button className={editingContact ? 'editing' : undefined} onClick={() => this.handleFormToggle('editingContact')}>✎</button>}
+            {isUser && <button className={`icon-button ${editingContact ? 'editing' : ''}`} onClick={() => this.handleFormToggle('editingContact')}>✎</button>}
             <h4>Reachable at:</h4>
           </div>
           {isUser && editingContact && <ContactForm onDone={this.handleFormToggle}/>}
           <p className="contact-info">{contact}</p>
         
           <div className="button-and-heading">
-            {isUser && <button className={editingAvailability ? 'editing' : undefined} onClick={() => this.handleFormToggle('editingAvailability')}>✎</button>}
+            {isUser && <button className={`icon-button ${editingAvailability ? 'editing' : ''}`} onClick={() => this.handleFormToggle('editingAvailability')}>✎</button>}
             <h4>Most Likely to Be Available:</h4>
           </div>
           {isUser && editingAvailability && <AvailabilityForm onDone={this.handleFormToggle}/>}
