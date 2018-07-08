@@ -1,9 +1,9 @@
 # Together: An App for Strengthening Friendships
 
-Find the deployed app: https://together-alchemy.herokuapp.com\
+Find the deployed app: https://together-alchemy.herokuapp.com  
 Find the back-end code: https://github.com/kelihansen/friends-backend
 
-This code represents Keli Hansen's continued work on the [Alchemy Code Lab](https://www.alchemycodelab.com) final project found at https://github.com/eighthnote.
+This project originated as the [Alchemy Code Lab](https://www.alchemycodelab.com) final project found at https://github.com/eighthnote.
 
 ## Requirements
 
