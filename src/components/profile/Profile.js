@@ -24,15 +24,15 @@ class Profile extends PureComponent {
   state = {
     editingPicture: false,
     editingContact: false,
-    editingAvailability: false,
-    isUser: false
+    editingAvailability: false
   };
+
+  isUser = false;
 
   handleProfileLoad = () => {
     const { match, loadProfile } = this.props;
-    match.url === '/profile' ?
-      (loadProfile(), this.setState({ isUser: true })) :
-      (loadProfile(match.params.id), this.setState({ isUser: false }));
+    this.isUser = match.url === '/profile';
+    this.isUser ? loadProfile() : loadProfile(match.params.id);
   };
  
   componentDidMount() {
@@ -57,7 +57,8 @@ class Profile extends PureComponent {
 
   render() {
     const { profile, giving, requesting } = this.props;
-    const { editingPicture, editingContact, editingAvailability, isUser } = this.state;
+    const { editingPicture, editingContact, editingAvailability } = this.state;
+    const { isUser } = this;
 
     if(!profile) return null;
     const { firstName, lastName, pictureUrl, availability, contact } = profile;
