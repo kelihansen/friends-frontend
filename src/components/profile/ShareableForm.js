@@ -15,8 +15,11 @@ export default class ShareableForm extends PureComponent {
     urgent: false
   };
 
-  handleChange = ({ target: { name, value } }) => {
-    this.setState({ [name]: value });
+  handleChange = ({ target }) => {
+    const { name, checked, value } = target;
+    name === 'urgent' ?
+      this.setState({ urgent: checked })
+      : this.setState({ [name]: value });
   };
 
   handleSubmit = event => {
@@ -57,7 +60,7 @@ export default class ShareableForm extends PureComponent {
           <input id={`${shareableType}-urgent`} type="checkbox" name="urgent" checked={urgent} onChange={this.handleChange}/>
         </div>
 
-        <button className="save-button" type="submit">{action}</button>
+        <button className="text-button" type="submit">{action}</button>
       </form>
     );
   }
