@@ -89,7 +89,7 @@ class Friends extends PureComponent {
           <ul>
             {pendingFriends && pendingFriends.map(friend => (
               <li key={friend._id}>
-                {friend.firstName}<button id={friend._id} onClick={this.handleAcceptFriend}>ACCEPT</button>
+                {friend.firstName} {friend.lastName}<button id={friend._id} onClick={this.handleAcceptFriend}>ACCEPT</button>
               </li>
             ))}
           </ul>
